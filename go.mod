@@ -1,4 +1,4 @@
-module regulardateparse
+module dateparse
 
 go 1.17
 
