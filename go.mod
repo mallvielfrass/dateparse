@@ -1,4 +1,4 @@
-module dateparse
+module github.com/mallvielfrass/dateparse
 
 go 1.17
 
