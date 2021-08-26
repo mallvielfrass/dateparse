@@ -22,11 +22,11 @@ import (
 12.декабрь
 */
 /*
-январь – january [ ‘dʒænju(ə)ri ]
-февраль – february [ ‘febru(ə)ri ]
-март – march [ mɑ:tʃ ]
-апрель – april [ ‘eipr(ə)l ]
-май – may [ mei ]
+январь – january
+февраль – february
+март – march
+апрель – april
+май – may
 июнь – june [ dʒu:n ]
 июль – july [ dʒu’lai ]
 август – august [ ˈɔːɡəst ]
