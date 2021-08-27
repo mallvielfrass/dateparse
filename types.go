@@ -18,7 +18,7 @@ const (
 	SlashWordMounthYYYY        = "SlashWordMounthYYYY"
 	SlashWordMounthRussianYY   = "SlashWordMounthRussianYY"
 	SlashWordMounthRussianYYYY = "SlashWordMounthRussianYYYY"
-	//
+
 	Broken = "Broken"
 )
 

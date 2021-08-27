@@ -221,7 +221,6 @@ func ParseAny(d string) (time.Time, error) {
 		return time.Now(), fmt.Errorf("empty")
 	}
 
-	//	return time.Now(), fmt.Errorf("empty")
 }
 func GetMonth(d string) (string, error) {
 	date := strings.TrimSpace(strings.ToLower(d))

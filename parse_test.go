@@ -14,8 +14,7 @@ func TestParseAny(t *testing.T) {
 		PrepDates string
 		DiffDates []time.Time
 	}{
-		//NUMBER
-		//____Simple_without_numerate
+
 		{
 			TestName:  "Simple/Dot/American",
 			SMEsDates: "09.Apr.2020",
