@@ -110,6 +110,30 @@ func ParseAny(d string) (time.Time, error) {
 		//	fmt.Printf("[%s] is SpaceAmericanYYYYR\n", date)
 		typeDate = SpaceAmericanYYYY
 	}
+	//dd/month/yy 06/Apr/20
+	SlashWordMounthYYR := regexp.MustCompile(`\b\d{2}\/[A-z]{3,9}\/\d\d\b`)
+	if SlashWordMounthYYR.MatchString(date) {
+		//	fmt.Printf("[%s] is NumerateDotRussianYYR\n", date)
+		typeDate = SlashWordMounthYY
+	}
+	//dd/month/yyyy 06/Apr/2020
+	SlashWordMounthYYYYR := regexp.MustCompile(`\b\d{2}\/[A-z]{3,9}\/\d\d\d\d\b`)
+	if SlashWordMounthYYYYR.MatchString(date) {
+		//	fmt.Printf("[%s] is NumerateDotRussianYYYYR\n", date)
+		typeDate = SlashWordMounthYYYY
+	}
+	//dd/month/yy 06/апр/20
+	SlashWordMounthRussianYYR := regexp.MustCompile(`\b\d{2}\/[А-я]{3,8}\/\d\d\b`)
+	if SlashWordMounthRussianYYR.MatchString(date) {
+		//	fmt.Printf("[%s] is NumerateDotRussianYYR\n", date)
+		typeDate = SlashWordMounthRussianYY
+	}
+	//dd/month/yyyy 06/апр/2020
+	SlashWordMounthRussianYYYYR := regexp.MustCompile(`\b\d{2}\/[А-я]{3,8}\/\d\d\d\d\b`)
+	if SlashWordMounthRussianYYYYR.MatchString(date) {
+		//	fmt.Printf("[%s] is NumerateDotRussianYYYYR\n", date)
+		typeDate = SlashWordMounthRussianYYYY
+	}
 	switch typeDate {
 	case SimpleDotYY, SimpleDotAmericanYY, NumerateDotRussianYY, SimpleDotYYYY, SimpleDotAmericanYYYY, NumerateDotRussianYYYY:
 		pD := strings.Split(date, ".")
@@ -167,6 +191,22 @@ func ParseAny(d string) (time.Time, error) {
 		}
 		y := pD[2]
 		if typeDate == SimpleDashAmericanYY {
+			y = "20" + y
+		}
+		dC := fmt.Sprintf("%s-%s-%s", y, m, pD[0])
+		dt, err := time.Parse(layoutISO, dC)
+		if err != nil {
+			return time.Now(), err
+		}
+		return dt, nil
+	case SlashWordMounthYY, SlashWordMounthRussianYY, SlashWordMounthYYYY, SlashWordMounthRussianYYYY:
+		pD := strings.Split(date, "/")
+		m, err := GetMonth(pD[1])
+		if err != nil {
+			return time.Now(), err
+		}
+		y := pD[2]
+		if typeDate == SlashWordMounthYY || typeDate == SlashWordMounthRussianYY {
 			y = "20" + y
 		}
 		dC := fmt.Sprintf("%s-%s-%s", y, m, pD[0])

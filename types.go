@@ -13,7 +13,13 @@ const (
 	SimpleSlashYYYY        = "SimpleSlashYYYY"
 	SpaceAmericanYY        = "SpaceAmericanYY"
 	SpaceAmericanYYYY      = "SpaceAmericanYYYY"
-	Broken                 = "Broken"
+	//
+	SlashWordMounthYY          = "SlashWordMounthYY"
+	SlashWordMounthYYYY        = "SlashWordMounthYYYY"
+	SlashWordMounthRussianYY   = "SlashWordMounthRussianYY"
+	SlashWordMounthRussianYYYY = "SlashWordMounthRussianYYYY"
+	//
+	Broken = "Broken"
 )
 
 // 1999-12-31 00:00:00 +0000 UTC

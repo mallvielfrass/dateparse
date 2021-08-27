@@ -54,10 +54,21 @@ func TestParseAny(t *testing.T) {
 
 			PrepDates: "2020-04-14",
 		},
+		{
+			TestName:  "Slash/WordMounth",
+			SMEsDates: "06/Apr/20",
 
+			PrepDates: "2020-04-06",
+		},
+		{
+			TestName:  "Slash/WordMounth/Full",
+			SMEsDates: "06/Apr/2020",
+
+			PrepDates: "2020-04-06",
+		},
 		{
 			TestName:  "Numerate/Dot/Russian",
-			SMEsDates: "  03.апр.2020 ",
+			SMEsDates: "03.апр.2020",
 
 			PrepDates: "2020-04-03",
 		},
